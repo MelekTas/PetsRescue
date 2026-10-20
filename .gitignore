@@ -1,0 +1,10 @@
+# Xcode kullanıcıya özel
+xcuserdata/
+*.xcuserstate
+
+# Build çıktıları
+DerivedData/
+build/
+
+# macOS
+.DS_Store
