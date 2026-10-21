@@ -28,12 +28,12 @@ enum AppColor {
     static let sand        = Color(hex: "FBF4E3")
     static let saffronText = Color(hex: "5C4410")
 
-    // Red (sadece acil durum ve silme)
+    // Red (for emergencies and deletion only)
     static let red     = Color(hex: "C62F3B")
     static let redTint = Color(hex: "FDE5E7")
     static let redText = Color(hex: "8E1F2A")
 
-    // Metin ve yüzeyler
+    // Text and Surfaces
     static let title        = Color(hex: "264653")
     static let body         = Color(hex: "4A6266")
     static let onTint       = Color(hex: "17463F")

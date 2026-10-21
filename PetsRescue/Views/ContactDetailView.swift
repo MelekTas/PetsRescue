@@ -15,7 +15,7 @@ struct ContactDetailView: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            // Üst bar
+            // Top bar
             ZStack {
                 Text("Details")
                     .font(.system(size: 17, weight: .semibold))

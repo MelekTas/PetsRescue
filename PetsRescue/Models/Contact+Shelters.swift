@@ -10,9 +10,9 @@ import Foundation
 extension Contact {
     static let shelters: [Contact] = [
         Contact(name: "Happy Paws Shelter",
-                area: "Fuorigrotta, Naples",
+                area: "Fuorigrotta",
                 phone: "081 000 010",
-                type: .adoption,
+                type: .association,
                 badge: .openNow,
                 subtitle: "Animal Shelter", hours: "On appointment",
                 services: "Dogs and cats · Adopt or surrender",
@@ -20,9 +20,9 @@ extension Contact {
                 addressNote: "Naples (NA)"),
         
         Contact(name:"Second Chance Centre",
-                area: "Chiaia, Naples",
+                area: "Chiaia",
                 phone: "081 000 0202",
-                type: .adoption,
+                type: .association,
                 badge: .openNow,
                 subtitle: "Animal Shelter", hours: "On appointment",
                 services: "Cats, small pets · By appointment",
@@ -30,10 +30,10 @@ extension Contact {
                 addressNote: "Naples (NA)"),
         
         Contact(name: "Safe Haven Kennels", 
-                area: "Vomero, Naples",
+                area: "Vomero",
                 phone: "081 000 0303",
-                type: .adoption,
-                badge: .closedNow,
+                type: .association,
+                badge: .openNow,
                 subtitle: "Animal Shelter",
                 hours: "On appointment",
                 services: "Dogs · Surrender by phone",
