@@ -19,25 +19,27 @@ struct AdoptionCardView: View {
             Text("Call first · Shelters often have limited space").font(.system(size: 13))
                 .foregroundColor(AppColor.body)
             
-            // Button {}
-            Button {
-                let number = contact.phone.replacingOccurrences(of: " ", with: "")
-                if let url = URL(string: "tel:" + number) { openURL(url) }}
-            label: {
-                Label("Call", systemImage: "phone.fill").font(.system(size: 25)).foregroundStyle(.white)
-                    .padding()
-                    .background(AppColor.tealDeep)
-                    .foregroundStyle(.white)
-                    .clipShape(Capsule())
-            }
-            
-
-            Spacer()
-            
-            
         }
+            
+            VStack (alignment: .leading, spacing: 6) {
+                
+                
+                // Button {}
+                Button {
+                    let number = contact.phone.replacingOccurrences(of: " ", with: "")
+                    if let url = URL(string: "tel:" + number) { openURL(url) }}
+                label: {
+                    Label("Call", systemImage: "phone.fill").font(.system(size: 25)).foregroundStyle(.white)
+                        .padding()
+                        .background(AppColor.tealDeep)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                    
+                }
+                
+            }
         
-    }
+            Spacer()
     
 }
 
