@@ -1,11 +1,3 @@
-//
-//  LearnView.swift
-//  PetsRescue
-//
-//  Created by Melek Tas on 21/10/2026.
-//
-
-import Foundation
 import SwiftUI
 
 enum LearnRoute: Hashable {
@@ -13,7 +5,9 @@ enum LearnRoute: Hashable {
 }
 
 struct LearnView: View {
-    @StateObject private var vm = LearnViewModel()
+    @ObservedObject var vm: LearnViewModel
+    var onProfileTap: () -> Void = { }
+
     @State private var path = NavigationPath()
 
     private let columns = [GridItem(.flexible(), spacing: 12),
@@ -29,7 +23,7 @@ struct LearnView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
-                .padding(.bottom, 40)
+                .padding(.bottom, 100)
             }
             .background(AppColor.background.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
@@ -48,9 +42,7 @@ struct LearnView: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Spacer()
-                CircleIconButton(systemName: "person.fill") {
-                    path.append(LearnRoute.progress)
-                }
+                CircleIconButton(systemName: "person.fill", action: onProfileTap)
             }
             Text("Learn")
                 .font(.system(size: 32, weight: .bold))
@@ -159,4 +151,8 @@ struct LearnView: View {
         .background(AppColor.card)
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
+}
+
+#Preview {
+    LearnView(vm: LearnViewModel())
 }

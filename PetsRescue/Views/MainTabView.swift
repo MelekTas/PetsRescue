@@ -1,25 +1,29 @@
-//
-//  MainTabView.swift
-//  PetsRescue
-//
-//  Created by Melek Tas on 20/10/2026.
-//
-
-import Foundation
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject private var learnVM = LearnViewModel()
+    @State private var showProgress = false
+
     var body: some View {
         TabView {
-            EmergencyView()
+            EmergencyView(onProfileTap: { showProgress = true })
                 .tabItem { Label("Emergency", systemImage: "cross.case.fill") }
 
-            Text("Adopt")
+            AdoptionView(onProfileTap: { showProgress = true })
                 .tabItem { Label("Adopt", systemImage: "pawprint.fill") }
 
-            LearnView()
+            LearnView(vm: learnVM, onProfileTap: { showProgress = true })
                 .tabItem { Label("Learn", systemImage: "book.fill") }
         }
         .tint(AppColor.tealDark)
+        .sheet(isPresented: $showProgress) {
+            NavigationStack {
+                YourProgressView(vm: learnVM, onOpen: { _ in showProgress = false })
+            }
+        }
     }
+}
+
+#Preview {
+    MainTabView()
 }
