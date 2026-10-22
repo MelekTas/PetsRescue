@@ -8,31 +8,9 @@
 import Foundation
 import SwiftUI
 
-extension ContactBadge {
-    var text: String {
-        switch self {
-        case .open24h: return "24/7"
-        case .hotline: return "Hotline"
-        case .openNow: return "Open now"
-        }
-    }
-    var symbol: String {
-        switch self {
-        case .open24h: return "clock.fill"
-        case .hotline: return "phone.fill"
-        case .openNow: return "checkmark.circle.fill"
-        }
-    }
-}
 
-extension ContactType {
-    var iconName: String {
-        switch self {
-        case .association: return "pawprint.fill"
-        case .veterinarian: return "stethoscope"
-        }
-    }
-}
+
+
 
 struct BadgePill: View {
     let badge: ContactBadge

@@ -17,7 +17,7 @@ struct MainTabView: View {
             Text("Adopt")
                 .tabItem { Label("Adopt", systemImage: "pawprint.fill") }
 
-            Text("Learn")
+            LearnView()
                 .tabItem { Label("Learn", systemImage: "book.fill") }
         }
         .tint(AppColor.tealDark)
