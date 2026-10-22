@@ -20,29 +20,30 @@ struct AdoptionCardView: View {
                 .foregroundColor(AppColor.body)
             
         }
+        
+        VStack (alignment: .leading, spacing: 6) {
             
-            VStack (alignment: .leading, spacing: 6) {
-                
-                
-                // Button {}
-                Button {
-                    let number = contact.phone.replacingOccurrences(of: " ", with: "")
-                    if let url = URL(string: "tel:" + number) { openURL(url) }}
-                label: {
-                    Label("Call", systemImage: "phone.fill").font(.system(size: 25)).foregroundStyle(.white)
-                        .padding()
-                        .background(AppColor.tealDeep)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-                    
-                }
+            
+            // Button {}
+            Button {
+                let number = contact.phone.replacingOccurrences(of: " ", with: "")
+                if let url = URL(string: "tel:" + number) { openURL(url) }}
+            label: {
+                Label("Call", systemImage: "phone.fill").font(.system(size: 25)).foregroundStyle(.white)
+                    .padding()
+                    .background(AppColor.tealDeep)
+                    .foregroundStyle(.white)
+                    .clipShape(Capsule())
                 
             }
+            
+        }
         
-            Spacer()
-    
+        Spacer()
+        
+    }
 }
+    #Preview {
+        AdoptionCardView(contact: Contact.shelters[0])
+    }
 
-#Preview {
-    AdoptionCardView(contact: Contact.shelters[0])
-}
